@@ -75,9 +75,21 @@
 
     <div class="container">
       <div class="page-header">
-        <center><h1>TripleZen <span id='currency'></span> &dash; Node Stats</h1></center>
+        <center><h1>TripleZen &dash; Litecoin Server</h1></center>
+		
+		<button type="button" onclick="location.href = 'https://triplezen.ddns.net:9327/static/index.html';">
+			<img src="img/litecoin.png"><b> LTC </b>
+		</button>
+		<button type="button" onclick="location.href = 'https://triplezen.ddns.net:5025/static/index.html';">
+			<img src="img/digibyte.png"><b> DGB </b>
+		</button>
+		<button type="button" onclick="location.href = 'https://triplezen.ddns.net:7903/static/index.html';">
+			<img src="img/dash.png"><b> DASH </b>
+		</button>
+		
         <b>
           <small>
+			<span id='currency'></span>
             <span id='_node' class='hidden'>Node: </span>
             <span id='node' class='hidden'></span><br/>
             Updated: <span id='updated'></span>
@@ -312,7 +324,7 @@
             .append(currency.clone()) :
           $('#payout_now').html('&dash;');
 
-        address_span= $('<span/>').maxlength(10).addClass('coin_address').text(address);
+        address_span= $('<span/>').addClass('coin_address').text(address);
         link_icon= $('<i/>').addClass('fa fa-external-link fa-fw');
         blockinfo= $('<a/>')
           .attr('href', currency_info.address_explorer_url_prefix + address)
