@@ -30,6 +30,12 @@
 
     <script src="js/config.json"></script>
 
+	
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.maxlength.css"> 
+	<script type="text/javascript" src="js/jquery.plugin.js"></script> 
+	<script type="text/javascript" src="js/jquery.maxlength.js"></script>
     <!-- Custom styles for this template -->
     <link href="" rel="stylesheet">
 
@@ -77,7 +83,17 @@
             Updated: <span id='updated'></span>
           </small>
         </b>
-      </div>
+		<h4>Getting Started</h4>
+			<p>Use the following information to start blocking with us:<br>
+				Pool URL: stratum+tcp://triplezen.ddns.net:9327<br>
+				Alternate: stratum+tcp://aussie-p2pool.ddns.net:9327<br>
+				User ID: Use your legacy LTC Address (need to start with L) followed by /0 for smaller hash miners<br>
+				Password: x<br>&nbsp;
+				<br>
+				IMPORTANT:<br>
+				Do not mine directly to an Exchange Wallet Address and do not use worker names (e.g. LTC_Address.worker)<br>
+			</p>
+		</div>
 
       <div id='node_alerts' class="alert alert-danger hidden"></div>
 
@@ -109,8 +125,8 @@
           <td width='31%' class='text-right'><span id='expected_time_to_share'></span></td>
         </tr>
         <tr>
-          <td width='19%'>Payout if a block were found NOW:</td>
-          <td width='31%' class='text-right'><span id='payout_now'></span></td>
+          <td width='19%'></td>
+          <td width='31%' class='text-right'><span id=''></span></td>
           <td width='19%'>Expected time to block:</td>
           <td width='31%' class='text-right'><span id='expected_time_to_block'></span></td>
         </tr>
@@ -123,7 +139,7 @@
             <i class='fa fa-sign-out fa-fw'></i>
             <span id='peers_out'></span>
           </td>
-          <td width='19%'>Time Since Last Update:</td>
+          <td width='19%'>Time Since Last Server Update:</td>
           <td width='31%' class='text-right'><span id='node_uptime'></span></td>
         </tr>
         <tr>
@@ -135,9 +151,9 @@
         <tr>
           <td width='19%'>Fee:</td>
           <td width='31%' class='text-right'><span id='node_fee'></span></td>
-          <td width='19%'></td>
-          <td width='31%' class='text-right'><span id=''></span></td>
-        </tr>
+          <td width='19%'>Fees Next Block:</td>
+          <td width='31%' class='text-right'><span id='payout_now'></span></td>
+		</tr>
       </table>
 
       <h4>Active miners on this node</h4>
@@ -151,6 +167,7 @@
         </tr>
       </table>
 
+	  <div id='chart'></div>
 	  <center>
         <div class='container'>
           <button id='hour' type="button" class="hashrate btn btn-info">Hour</button>
@@ -160,19 +177,19 @@
           <button id='year' type="button" class="hashrate btn btn-info">Year</button>
         </div>
       </center>
-      <div id='chart'></div>
+      
 
-
+<!--
       <h4>This Servers Shares</h4>
       <table id='recent_shares' class="table table-hover">
         <tr>
           <th width='50%' class='text-left'>Date/Time</th>
           <th width='15%' class='text-right'>Number</th>
           <th width='15%' class='text-right'>Hash</th>
-          <th width='20%' class='text-right'>Confirmations</th>
+          <th width='20%' class='text-right'></th>
         </tr>
       </table>
-
+-->
 
       <h4>Recent blocks</h4>
       <table id='recent_blocks' class="table table-hover">
@@ -180,7 +197,7 @@
           <th>Date/Time</th>
           <th>Number</th>
           <th>Hash</th>
-          <th>Confirmations</th>
+          <th></th>
         </tr>
       </table>
     </div> <!-- /container -->
@@ -195,7 +212,7 @@
         </p>
         <p class='text-center'>
           Donate some coins, if you like it <code>12nQSWig35Wue2AGjiGM5F2LUvSwq8uQqS</code>
-          (<i class='fa fa-btc'></i>) or <code>L</code> (LTC)
+          (<i class='fa fa-btc'></i>) or <code>LNXKnT7nB84NZSHvoKg33nYPm1fGmUtCun</code> (LTC)
         </p>
       </div>
     </div>
@@ -295,7 +312,7 @@
             .append(currency.clone()) :
           $('#payout_now').html('&dash;');
 
-        address_span= $('<span/>').addClass('coin_address').text(address);
+        address_span= $('<span/>').maxlength(10).addClass('coin_address').text(address);
         link_icon= $('<i/>').addClass('fa fa-external-link fa-fw');
         blockinfo= $('<a/>')
           .attr('href', currency_info.address_explorer_url_prefix + address)
@@ -329,7 +346,7 @@
         }
         else {
           tr.append($('<td/>').attr('class', 'text-right')
-            .append($('<i/>').append('no shares yet')));
+            .append($('<i/>').append('working on new shares')));
         }
         $('#'+address).remove(); $('#active_miners').append(tr);
       });
