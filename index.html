@@ -69,7 +69,7 @@
 
     <div class="container">
       <div class="page-header">
-        <h1>P2Pool <span id='currency'></span> &dash; Stats</h1>
+        <center><h1>TripleZen <span id='currency'></span> &dash; Node Stats</h1></center>
         <b>
           <small>
             <span id='_node' class='hidden'>Node: </span>
@@ -87,35 +87,25 @@
         <p><b>2013-12-13: This is a message to miners on my node telling them something really cool.</b></p>
       </div>
 
-      <center>
-        <div class='container'>
-          <button id='hour' type="button" class="hashrate btn btn-info">Hour</button>
-          <button id='day' type="button" class="hashrate btn btn-info">Day</button>
-          <button id='week' type="button" class="hashrate btn btn-info">Week</button>
-          <button id='month' type="button" class="hashrate btn btn-info">Month</button>
-          <button id='year' type="button" class="hashrate btn btn-info">Year</button>
-        </div>
-      </center>
-      <div id='chart'></div>
-
+      
       <h4>Status</h4>
       <table id='status' class="table table-hover" border='0'>
         <tr>
-          <td width='19%'>Local rate:</td>
+          <td width='19%'>Servers Hashrate:</td>
           <td width='31%' class='text-right'><span id='local_rate'></span></td>
-          <td width='19%'>Shares:</td>
+          <td width='19%'>Servers Shares:</td>
           <td width='31%' class='text-right'><span id='shares'></span></td>
         </tr>
         <tr>
-          <td width='19%'>Global pool rate:</td>
+          <td width='19%'>Pool Hashrate:</td>
           <td width='31%' class='text-right'><span id='global_rate'></span></td>
           <td width='19%'>Share difficulty:</td>
           <td width='31%' class='text-right'><span id='share_difficulty'></span></td>
         </tr>
         <tr>
-          <td width='19%'>Current block value:</td>
+          <td width='19%'>Block value:</td>
           <td width='31%' class='text-right'><span id='block_value'></span></td>
-          <td width='19%'>Expected time to share:</td>
+          <td width='19%'>Time to share:</td>
           <td width='31%' class='text-right'><span id='expected_time_to_share'></span></td>
         </tr>
         <tr>
@@ -133,20 +123,20 @@
             <i class='fa fa-sign-out fa-fw'></i>
             <span id='peers_out'></span>
           </td>
-          <td width='19%'>Node uptime:</td>
+          <td width='19%'>Time Since Last Update:</td>
           <td width='31%' class='text-right'><span id='node_uptime'></span></td>
         </tr>
         <tr>
-          <td width='19%'>Node p2pool version:</td>
+          <td width='19%'>Version:</td>
           <td width='31%' class='text-right'><span id='p2pool_version'></span></td>
-          <td width='19%'>Protocol version:</td>
+          <td width='19%'>Protocol:</td>
           <td width='31%' class='text-right'><span id='protocol_version'></span></td>
         </tr>
         <tr>
-          <td width='19%'>Node fee:</td>
+          <td width='19%'>Fee:</td>
           <td width='31%' class='text-right'><span id='node_fee'></span></td>
-          <td width='19%'>Node donation:</td>
-          <td width='31%' class='text-right'><span id='node_donation'></span></td>
+          <td width='19%'></td>
+          <td width='31%' class='text-right'><span id=''></span></td>
         </tr>
       </table>
 
@@ -160,6 +150,17 @@
           <th width='14%' class='text-right'>Payout Per Block</th>
         </tr>
       </table>
+
+	  <center>
+        <div class='container'>
+          <button id='hour' type="button" class="hashrate btn btn-info">Hour</button>
+          <button id='day' type="button" class="hashrate btn btn-info">Day</button>
+          <button id='week' type="button" class="hashrate btn btn-info">Week</button>
+          <button id='month' type="button" class="hashrate btn btn-info">Month</button>
+          <button id='year' type="button" class="hashrate btn btn-info">Year</button>
+        </div>
+      </center>
+      <div id='chart'></div>
 
 
       <h4>This Servers Shares</h4>

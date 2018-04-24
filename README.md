@@ -1,7 +1,6 @@
 p2pool-node-status
 ==================
 
-An alternative clean p2pool node dashboard. It uses Bootstrap, jQuery and Highcharts.
 
 ## Installation
 
@@ -132,9 +131,9 @@ If this variable is set to `false`, the UI displays the p2pool currency symbol (
 
 …
 
-## Credits & License
+## Credits
 
-Alexander Zschach <alex@zschach.net>
+Alexander Zschach
 
 ### Donate
 
