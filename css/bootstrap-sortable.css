@@ -102,7 +102,7 @@ table.sortable>thead th:not([data-defaultsort=disabled]) {
 }
 
 table.sortable>thead th:hover:not([data-defaultsort=disabled]) {
-    background: #efefef;
+    background: transparent;
 }
 
 table.sortable>thead th div.mozilla {
