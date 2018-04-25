@@ -370,7 +370,7 @@
         local_doa_hashrate+= doa;
 
         tr.append($('<td/>').attr('class', 'text-left')
-          .html(address + '&nbsp;').substr(0, 4).append(blockinfo));
+          .html(address + '&nbsp;').append(blockinfo));
         tr.append($('<td/>').attr('class', 'text-right')
           .append(formatHashrate(hashrate)));
         tr.append($('<td/>').attr('class', 'text-right')
