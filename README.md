@@ -125,6 +125,7 @@ Bitcoins 12nQSWig35Wue2AGjiGM5F2LUvSwq8uQqS
 
 
 --------------------------
-
+modified for personal use
+original source: https://github.com/justino/p2pool-ui-punchy
 :wq!
 
