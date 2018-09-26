@@ -2,13 +2,7 @@
 <html lang="en">
   <head>
   
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-5774477604817329",
-          enable_page_level_ads: true
-     });
-</script>
+  
 
      <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -151,7 +145,7 @@
       </div>
       <div>
 		<p>
-            <h4>Getting Started</h4><br>
+            <h4>Getting Started</h4>
 
 			Use the following information to start blocking with us:<br>
 			Pool URL: stratum+tcp://<span class='node'></span><br>
@@ -165,7 +159,7 @@
 
       
 
-      <h4>Status</h4>
+      <center><h4>Pool Stats</h4></center>
       <table id='status' class="table table-hover" border='10'>
         <tr>
           <td width='25%'>Local rate:</td>
@@ -223,7 +217,7 @@
       </div>
       <div class="alert alert-danger hidden">
       </div>
-      <h4>Active miners on this node</h4>
+      <center><h4>Active miners on this node</h4></center>
       <table class="table table-hover sortable">
         <thead><tr>
           <th class='text-left'><span class='currency'></span> Address</th>
@@ -254,7 +248,7 @@
 This p2pool was installed using the <a href="https://github.com/farsider350/p2pool-oneclick.git">p2pool oneclick</a>
 </p>
 <br>
-      <h4>Recent blocks</h4>
+      <center><h4>Recent blocks</h4></center>
       <table class="table table-hover">
         <thead><tr>
           <th>When</th>
@@ -441,7 +435,7 @@ This p2pool was installed using the <a href="https://github.com/farsider350/p2po
         .text((local_stats.donation_proportion * 100) + '%');
       
       $('#node_fee')
-        .text((local_stats.fee / 2) + '%');
+        .text((local_stats.fee) + '%');
       $('#p2pool_version')
         .text(local_stats.version);
       $('#protocol_version')
